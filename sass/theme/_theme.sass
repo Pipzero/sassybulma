@@ -1,0 +1,96 @@
+html
+  font-size: 62.5%
+
+body
+  font-weight: $fw-normal
+  font-family: $body-font
+  font-size: $base-rem-size
+  line-height: $base-rem-size*1.4
+
+h1,
+h2,
+h3,
+h4,
+h5
+  font-weight: normal
+  margin: 4rem 0 1.4rem
+  padding: 0
+  font-family: $heading-font
+  font-weight: $fw-bold
+
+h1
+  font-size: $base-rem-size*powerNumber($typescale,5)
+  line-height: $base-rem-size*powerNumber($typescale,5)*1
+h2
+  font-size: $base-rem-size*powerNumber($typescale,4)
+  line-height: $base-rem-size*powerNumber($typescale,5)*.8
+h3
+  font-size: $base-rem-size*powerNumber($typescale,3)
+  line-height: $base-rem-size*powerNumber($typescale,5)*.6
+h4
+  font-size: $base-rem-size*powerNumber($typescale,2)
+  line-height: $base-rem-size*powerNumber($typescale,5)*.4
+h5
+  font-size: $base-rem-size*$typescale
+  line-height: $base-rem-size*powerNumber($typescale,5)*.4
+
+h1:first-child,
+h2:first-child, 
+h3:first-child,
+h4:first-child,
+h5:first-child
+  margin-top: 0
+  padding-top: 0
+  
+p
+  margin: 0 0 1rem
+
+  &.headline
+    font-size: .86rem
+
+* p:only-child,
+* p:last-child
+  margin-bottom: 0
+
+a
+  text-decoration: none
+  transition: .2s
+
+  &:active,
+  &:visited
+    text-decoration: none
+
+  &:hover
+    text-decoration: none
+    text-decoration: underline
+
+
+//main container mods
+
+header
+  height: 30vh
+  background: #00b09b
+  background: linear-gradient(to left, #cb2d3e, #ef473a)
+  text-align: center
+  font-size: 4rem
+  padding-top: 5rem
+  letter-spacing: .8rem
+
+footer
+  // min-height: 10rem
+  display: flex
+  flex-wrap: wrap
+
+hr
+  display: block
+// CUSTOM CHOPS
+
+#header
+  padding-top: 4rem
+  padding-bottom: 4rem
+  padding-left: 4rem
+  padding-right: 4rem
+  background: url("img/markus-spiske-headphone.jpg") center -40rem
+  background-size: cover
+  background-attachment: fixed
+  height: 15rem
