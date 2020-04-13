@@ -8,7 +8,7 @@
       <header id="main-nav" class="container is-fluid">
         <div class="columns is-flex-mobile ">
           <div class="column left is-2">
-            <a href="logo has-text-weight-bold"><span class="has-text-weight-bold has-text-black ">PIPO.SULPX</span></a>
+            <a href="<?php bloginfo('url'); ?>"><span class="has-text-weight-bold has-text-black ">PIPO.SULPX</span></a>
           </div>
           <div class="column center is-8 is-hidden-mobile">
             <a href="#" class="navbar-item make-rounded is-active">This</a>

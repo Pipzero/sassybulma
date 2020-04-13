@@ -5,31 +5,51 @@
 <!-- Start your custom markup here -->
 <div class="container">
 
-  <div class="notification">
-    You can stick with Bootstrap, but you can also learn <a href="http://bulma.io">Bulma</a>.
-  </div>
 
   <div class="columns">
-    <div class="column is-2">
-      <!-- Primary Widgets Side Bar -->
-      Left Sidebar
-    </div>
     <div class="column is-8">
       <!-- Page Content Here -->
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime voluptas quae excepturi numquam, eveniet iure omnis eos neque voluptatibus atque, doloribus sapiente illum molestias consequatur voluptates tempora perspiciatis similique eaque.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, laboriosam earum placeat eligendi nam veniam, obcaecati ab labore reprehenderit consectetur soluta! Reiciendis veritatis molestiae at nemo, adipisci incidunt rem possimus.
-      </p>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione delectus fuga veniam consequuntur ex deleniti accusantium totam alias fugit doloremque ut, est debitis sint natus harum esse, facilis recusandae porro?
-      </p>
-
+      
+      <?php 
+        if ( have_posts() ) {
+          while ( have_posts() ) {
+            the_post(); 
+            ?>
+            <h3><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
+            <?php the_content();
+          }
+        }
+        ?>
     
     </div>
-    <div class="column is-2">
+    <div class="column is-4">
       <!-- Misc Widgets Side Bar -->
-      Right Sidebar
+      <div class="container">
+        <div class="notification is-danger">
+          This is regular container.
+        </div>
+        
+        <section class="hero notification">
+          <div class="hero-body is-paddingless">
+            <div class="container">
+              <h4 class="title">
+                Hero title
+              </h4>
+              <h5 class="subtitle">
+                Hero subtitle
+              </h5>
+            </div>
+          </div>
+        </section>
+
+      </div>
+      
     </div>
+  </div>
+
+  
+  <div class="notification is-warning">
+    You can stick with Bootstrap, but you can also learn <a href="http://bulma.io">Bulma</a>.
   </div>
 
 </div>
