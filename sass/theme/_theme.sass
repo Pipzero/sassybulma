@@ -1,11 +1,12 @@
 html
-  font-size: 62.5%
+  font-size: $base-font-size
+  overflow-y: auto
 
 body
   font-weight: $fw-normal
   font-family: $body-font
   font-size: $base-rem-size
-  line-height: $base-rem-size*1.4
+  line-height: $base-rem-size*1.6
 
 h1,
 h2,
@@ -13,26 +14,26 @@ h3,
 h4,
 h5
   font-weight: normal
-  margin: 4rem 0 1.4rem
   padding: 0
+  margin: 0
   font-family: $heading-font
   font-weight: $fw-bold
 
 h1
   font-size: $base-rem-size*powerNumber($typescale,5)
-  line-height: $base-rem-size*powerNumber($typescale,5)*1
+  line-height: $base-rem-size*powerNumber($typescale,5)*1.4
 h2
   font-size: $base-rem-size*powerNumber($typescale,4)
-  line-height: $base-rem-size*powerNumber($typescale,5)*.8
+  line-height: $base-rem-size*powerNumber($typescale,5)*1.3
 h3
   font-size: $base-rem-size*powerNumber($typescale,3)
-  line-height: $base-rem-size*powerNumber($typescale,5)*.6
+  line-height: $base-rem-size*powerNumber($typescale,5)*1.2
 h4
   font-size: $base-rem-size*powerNumber($typescale,2)
-  line-height: $base-rem-size*powerNumber($typescale,5)*.4
+  line-height: $base-rem-size*powerNumber($typescale,5)*1.1
 h5
   font-size: $base-rem-size*$typescale
-  line-height: $base-rem-size*powerNumber($typescale,5)*.4
+  line-height: $base-rem-size*powerNumber($typescale,5)*1
 
 h1:first-child,
 h2:first-child, 
@@ -41,56 +42,117 @@ h4:first-child,
 h5:first-child
   margin-top: 0
   padding-top: 0
-  
-p
-  margin: 0 0 1rem
-
-  &.headline
-    font-size: .86rem
-
-* p:only-child,
-* p:last-child
-  margin-bottom: 0
-
-a
-  text-decoration: none
-  transition: .2s
-
-  &:active,
-  &:visited
-    text-decoration: none
-
-  &:hover
-    text-decoration: none
-    text-decoration: underline
-
+ 
 
 //main container mods
-
-header
-  height: 30vh
-  background: #00b09b
-  background: linear-gradient(to left, #cb2d3e, #ef473a)
-  text-align: center
-  font-size: 4rem
-  padding-top: 5rem
-  letter-spacing: .8rem
-
-footer
-  // min-height: 10rem
-  display: flex
-  flex-wrap: wrap
-
-hr
-  display: block
-// CUSTOM CHOPS
-
 #header
-  padding-top: 4rem
-  padding-bottom: 4rem
-  padding-left: 4rem
-  padding-right: 4rem
-  background: url("img/markus-spiske-headphone.jpg") center -40rem
-  background-size: cover
-  background-attachment: fixed
-  height: 15rem
+  background: black
+  color: white
+  margin-bottom: 2rem
+
+
+// personal helpers
+
+// ----- flex helpers
+
+.center, .center-column, .top, .right, .bottom, .left 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+.center-column 
+  flex-direction: column;
+
+.top
+  align-items:     flex-start; 
+.right
+  justify-content: flex-end;   
+.bottom
+  align-items:     flex-end;   
+.left
+  justify-content: flex-start; 
+
+.single-spaced, .single-spaced * 
+  line-height: 1;
+
+.pad-x
+  padding-left: 2rem
+  padding-right: 2rem
+
+.pad-y
+  padding-top: 2rem
+  padding-bottom: 2rem
+
+.noscroll
+  overflow: hidden
+
+#main-nav
+  margin: 0 0 4rem
+  background-color: $grey-lightest
+
+  .columns
+    padding: 0
+    margin: 0 0 1rem
+
+  .column
+    padding-left: 1.4rem !important
+    padding-right: 1.4rem !important
+
+  .navbar-item
+    padding: .8rem 1.6rem
+
+    &:hover
+      background-color: black
+      color: white
+
+
+//search button
+.search-up
+  cursor: pointer
+
+  &:hover
+    opacity: .5
+
+.search-overlay
+  position: fixed
+  background-color: rgba($black, .95)
+  color: $white-bis
+  left: 0
+  top: 0
+  height: 100vh
+  width: 100vw
+  display: none
+
+  &.is-overlay-active
+    top: 0
+    display: block
+
+  
+  input[type='text']
+    width: 40rem
+
+  &-head
+    background-color: $white-bis
+    width: 100vw
+    padding: 1rem 0
+
+  &-body
+
+  &-close
+    position: absolute
+    right: 2rem
+    top: 1.8rem
+
+// extra styilin
+.dd-list
+  dd
+    font-weight: bold
+  dt
+    font-style: italic
+    margin: 0 0 2rem
+    color: $grey
+
+// globals
+
+*
+  transition: .2s all
