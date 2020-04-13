@@ -100,10 +100,17 @@ h5:first-child
 
   .navbar-item
     padding: .8rem 1.6rem
+    margin: 0 .2rem
 
     &:hover
-      background-color: black
-      color: white
+      background-color: $grey
+      color: $white
+
+    &.is-active
+      background-color: $black
+      color: $white
+
+
 
 
 //search button
@@ -152,6 +159,12 @@ h5:first-child
     margin: 0 0 2rem
     color: $grey
 
+// personal helpers
+
+.make-rounded
+  border-radius: 4rem
+
+    
 // globals
 
 *

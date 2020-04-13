@@ -11,10 +11,10 @@
             <a href="logo has-text-weight-bold"><span class="has-text-weight-bold has-text-black ">PIPO.SULPX</span></a>
           </div>
           <div class="column center is-8 is-hidden-mobile">
-            <a href="#" class="navbar-item">This</a>
-            <a href="#" class="navbar-item">Uses</a>
-            <a href="#" class="navbar-item">Bulma</a>
-            <a href="#" class="navbar-item">Framework</a>
+            <a href="#" class="navbar-item make-rounded is-active">This</a>
+            <a href="#" class="navbar-item make-rounded">Uses</a>
+            <a href="#" class="navbar-item make-rounded">Bulma</a>
+            <a href="#" class="navbar-item make-rounded">Framework</a>
           </div>
           <div class="column right is-2">
             <!-- <a class="button is-secondary is-inverted is-outlined">contact</a> -->

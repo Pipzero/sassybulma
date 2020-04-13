@@ -28,7 +28,7 @@
     </div>
     <div class="column is-2">
       <!-- Misc Widgets Side Bar -->
-      Fourth column
+      Right Sidebar
     </div>
   </div>
 
