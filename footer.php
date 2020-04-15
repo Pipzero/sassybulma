@@ -4,6 +4,7 @@
       </footer>
 
       <div class="search-overlay">
+
         <div class="search-overlay-head left">
           <i class="fas fa-search has-text-black pad-x is-size-4 aria-hidden="true"></i>
           <div class="field is-grouped">
@@ -19,15 +20,29 @@
 
         <div class="search-overlay-body pad-y">
           <div class="container">
-            <div class="icon is-large center">
-              <div class="search-results">
-                <div class="search-results-spinner"><i class="fas fa-spinner fa-pulse has-text-white pad-x is-size-3"></i></div>
-              
+
+              <div class="search-results-spinner center">
+                <div class="icon is-large center">
+                  <i class="fas fa-spinner fa-pulse has-text-white pad-x is-size-3"></i>
+                </div>
               </div>
-            </div>
+
+              <!-- <article class="notification is-warning">
+                Nothing to show...
+              </article>
+
+              <div class="notification is-primary search-results-list">
+                <h5>3 Search results</h5>
+                <dl>
+                  <dt><h5><a href="http://">Page or Post Title</a></h5></dt>
+                  <dd>Page or Post Excerpt</dd>
+                </dl>
+              </div> -->
+
           </div>
         </div>
+
       </div>
-      <?php wp_footer(); ?>
-      </body>
+  <?php wp_footer(); ?>
+  </body>
 </html>

@@ -8,9 +8,11 @@ class Search{
     this.searchOverlay = $('.search-overlay');
     this.mainContainer = $('html');
     this.searchModalState = false;
-    this.searchTerm = $('.search-term')
+    this.searchTerm = $('.search-term');
     this.searchTimer;
-    this.searchTimeout = 2000;
+    this.searchTimeout = 800;
+    this.searchPreloader = $('.search-results-spinner');
+    this.searchFindings;
     this.events();
   }
 
@@ -26,14 +28,20 @@ class Search{
   // methods (function, action)
   searchMania(e) {
     // other than esc button
-    if (e.keyCode != 27) {
-      console.log('Typing...')
-      clearTimeout(this.searchTimer);
-      this.searchTimer = setTimeout(() => { console.log('Initiate Search') }, this.searchTimeout);
+    if (e.keyCode != 13 && e.keyCode != 16 && e.keyCode != 17 && e.keyCode != 18 && e.keyCode != 27 ) {
+      // console.log('Typing...' + e.keyCode)
+      this.searchPreloader.hide();
+      
+      // clearTimeout(this.searchTimer);
+      this.searchTimer = setTimeout(() => {
+        console.log('Initiate Search');
+        this.searchPreloader.show();
+      }, this.searchTimeout);
     }
     // esc pressed, abort
     else
-      clearTimeout(this.searchTimer);
+      // clearTimeout(this.searchTimer);
+      this.searchPreloader.hide();
   }
 
   keyPressDispatcher(e) {
