@@ -20,9 +20,11 @@
         <div class="search-overlay-body pad-y">
           <div class="container">
             <div class="icon is-large center">
-              <i class="fas fa-spinner fa-pulse has-text-white pad-x is-size-3"></i>
+              <div class="search-results">
+                <div class="search-results-spinner"><i class="fas fa-spinner fa-pulse has-text-white pad-x is-size-3"></i></div>
+              
+              </div>
             </div>
-
           </div>
         </div>
       </div>

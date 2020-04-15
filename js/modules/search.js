@@ -7,9 +7,10 @@ class Search{
     this.closeButton = $('.search-overlay-close');
     this.searchOverlay = $('.search-overlay');
     this.mainContainer = $('html');
-    this.popupState = false;
+    this.searchModalState = false;
     this.searchTerm = $('.search-term')
-    this.searchTimeout = 1000;
+    this.searchTimer;
+    this.searchTimeout = 2000;
     this.events();
   }
 
@@ -23,20 +24,25 @@ class Search{
   
 
   // methods (function, action)
-  searchMania() {
-    setTimeout(() => {
-      console.log('seach typing');
-      console.log('Timeout:' + this.searchTimeout)
-    }, this.searchTimeout);
+  searchMania(e) {
+    // other than esc button
+    if (e.keyCode != 27) {
+      console.log('Typing...')
+      clearTimeout(this.searchTimer);
+      this.searchTimer = setTimeout(() => { console.log('Initiate Search') }, this.searchTimeout);
+    }
+    // esc pressed, abort
+    else
+      clearTimeout(this.searchTimer);
   }
 
   keyPressDispatcher(e) {
 
     // if closed, open up
-    if (e.keyCode == 83 && !this.popupState) {
+    if (e.keyCode == 83 && !this.searchModalState) {
       this.openOverlay()
     }
-    if (e.keyCode == 27 && this.popupState) {
+    if (e.keyCode == 27 && this.searchModalState) {
       this.closeOverlay()
     }
   }
@@ -44,13 +50,13 @@ class Search{
   openOverlay(){
     this.searchOverlay.show();
     this.mainContainer.toggleClass('noscroll')
-    this.popupState = true;
+    this.searchModalState = true;
   }
   
   closeOverlay(){
     this.searchOverlay.hide();
     this.mainContainer.toggleClass('noscroll')
-    this.popupState = false;
+    this.searchModalState = false;
   }
 
 }
