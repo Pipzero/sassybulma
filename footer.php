@@ -18,14 +18,9 @@
           <button class="delete is-large"></button>
         </div>
 
-        <div class="search-overlay-body pad-y">
+        <div class="search-results pad-y">
           <div class="container">
 
-              <div class="search-results-spinner center">
-                <div class="icon is-large center">
-                  <i class="fas fa-spinner fa-pulse has-text-white pad-x is-size-3"></i>
-                </div>
-              </div>
 
               <!-- <article class="notification is-warning">
                 Nothing to show...

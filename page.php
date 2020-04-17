@@ -1,1 +1,5 @@
-<?php /* Template Name: Regular Page */ ?>
+<?php get_header(); ?>
+
+
+ 
+<?php get_footer(); ?>
